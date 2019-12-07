@@ -1,0 +1,34 @@
+{
+  "name": "graphql-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.yml",
+    "codegen-watch": "graphql-codegen --config codegen.yml --watch",
+    "dev:server": "yarn workspace server dev",
+    "dev:client": "yarn workspace client start",
+    "dev": "concurrently \"yarn run codegen-watch\" \"yarn run dev:server\" \"yarn run dev:client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.9.1",
+    "@graphql-codegen/introspection": "1.0.0",
+    "@graphql-codegen/schema-ast": "^1.9.1",
+    "@graphql-codegen/typescript": "1.0.0",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.0.0",
+    "@graphql-codegen/typescript-operations": "1.0.0",
+    "@graphql-codegen/typescript-react-apollo": "1.9.1",
+    "@graphql-codegen/typescript-resolvers": "1.0.0",
+    "concurrently": "^5.0.0"
+  },
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ]
+}
